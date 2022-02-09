@@ -1,0 +1,86 @@
+ 
+
+header {
+     color: #ffffff;
+    width:100%;
+    text-align: center;
+    height: 100px;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+ 
+}
+
+.header-box{
+ color: #ffffff;
+ height:100px;
+ display: flex;
+ width: 95%;
+ align-items: center;
+ justify-content: center;
+ background: #ffffff;
+ border-radius: 50px;
+}
+
+h1{
+  font-family: 'Pacifico', cursive;
+  font-size: 250%;
+  width: 80%;
+  text-align: start;
+ color:#F54952 ;
+}
+
+.books-search-button{
+  width: 8%;
+  height: 57px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F54952;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: cubic-bezier(0, 1.15, 0.3, 1.06) 0.5s;
+}
+.books-search-button:hover{
+  box-shadow: 0px 4px 6px 0px #bdb4b7;
+  transition: cubic-bezier(0, 1.15, 0.3, 1.06) 0.5s;
+  background: #ce333a;
+}
+
+.books-search-button p {
+  margin-right: 7px;
+  font-size: 100%;
+}
+.books-search-icon{
+    font-size: 150%;
+}
+.books-search-link{
+  width: 100%;
+  font-size: 230%;
+  height: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Dongle', sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  }
+
+
+
+
+  @media  (max-width: 1380px) {
+
+    .books-search-button{
+width: 12%;
+height: 45px;
+ 
+
+    }
+    .books-search-link{
+      font-size: 200%;
+    }
+ }

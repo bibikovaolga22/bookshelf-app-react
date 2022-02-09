@@ -1,0 +1,15 @@
+.search-books-box{
+    width: 80%;
+    display: flex;
+ 
+    justify-content: flex-end;
+}
+
+.search-books{
+color: #6b1317;
+cursor: pointer;
+font-size: 350%;
+ 
+
+  }
+ 
