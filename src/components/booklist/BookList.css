@@ -1,7 +1,7 @@
 .book-list {
-    width: 90%;
-    height: auto;
-       display: flex;
+width: 90%;
+height: auto;
+ display: flex;
  flex-wrap: wrap;
  justify-content: center;   
  

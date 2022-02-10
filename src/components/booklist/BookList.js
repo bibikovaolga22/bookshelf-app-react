@@ -12,6 +12,7 @@ const BookList = (props) => {
         try {
             return (
                 <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title} ></img>
+
             );
         } catch (error) {
             console.log(error);
@@ -34,23 +35,17 @@ const BookList = (props) => {
 
     }
 
+    const [selection, setSelection] = useState('');
 
-
-    const [selection, setSelection] = useState('')
-
-
-
-
-    
 
     return (
 
 
-        <div className='book-list'>
-
+        <div className='book-list'  >
             {props.books.map((book) => (
                 <motion.div className='image-container' key={book.id} onMouseLeave={() => setSelection('')}
-                    onClick={() => props.handleCurrentBooks(book)}
+
+                    onClick={() => props.handleCurrentlyReading(book)}
 
                     initial='out'
                     animate='in'
@@ -73,7 +68,7 @@ const BookList = (props) => {
 
                 </motion.div>
 
-                
+
             ))}
 
         </div>

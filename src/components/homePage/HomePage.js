@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import './HomePage.css'
 import Header from '../header/Header';
 import CurrentlyReading from '../currentlyReading/CurrentlyReading';
@@ -6,7 +6,7 @@ import CurrentlyReading from '../currentlyReading/CurrentlyReading';
 // import Read from '../read/Read';
 import { motion } from 'framer-motion/dist/es/index';
 import { animationOne, transitionOne } from '../animation'
- 
+
 
 const HomePage = (props) => {
 
@@ -21,8 +21,8 @@ const HomePage = (props) => {
 
 
             <Header />
-            <CurrentlyReading title = "Hi" />
- 
+            <CurrentlyReading newBooks={props.newBooks} />
+
             {/* <WantToRead />
             <Read /> */}
         </motion.main>

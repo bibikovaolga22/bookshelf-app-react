@@ -7,7 +7,7 @@ import { FaAngleLeft } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { animationOne, transitionOne } from '../animation'
 
-const SearchPage = () => {
+const SearchPage = (props) => {
 
     const [books, setBooks] = useState([]);
     const [searchValue, setSearchValue] = useState("");
@@ -34,15 +34,10 @@ const SearchPage = () => {
 
     }, [searchValue])
 
- 
 
 
-    const [currentlyReadingBooks, setCurrentlyReading] = useState([])
 
-    const addCurrentBooks = (book) => {
-        const newCurrentlyReadingBooks = [...currentlyReadingBooks, book];
-        setCurrentlyReading(newCurrentlyReadingBooks);
-    };
+
 
 
     return (
@@ -63,16 +58,14 @@ const SearchPage = () => {
                 </div>
                 <div className='search-input-box'>
 
-                    <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}  />
+                    <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
 
                 </div>
+                <div className='book-list'></div>
 
             </div>
-            <div className='books-menu'> <BookList books={books} handleCurrentBooks={addCurrentBooks} /> </div>
+            <div className='books-menu'> <BookList books={books} handleCurrentlyReading={props.handleCurrentlyReading} /> </div>
 
-            <div className='row'>
-                <BookList books={currentlyReadingBooks} favouriteComponent={addCurrentBooks} />
-            </div>
         </motion.main>)
 
 
