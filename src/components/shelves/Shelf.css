@@ -1,0 +1,19 @@
+.shelf-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+ 
+.current-books{
+    width: 100%;
+}
+
+.currently-reading-box{
+    width: 100%;
+    height: auto;
+   
+}

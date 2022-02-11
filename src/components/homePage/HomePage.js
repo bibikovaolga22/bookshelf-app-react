@@ -1,14 +1,13 @@
 import React from "react";
 import './HomePage.css'
 import Header from '../header/Header';
-import CurrentlyReading from '../currentlyReading/CurrentlyReading';
-// import WantToRead from '../wantToRead/WantToRead';
-// import Read from '../read/Read';
+import Shelf from '../shelves/Shelf';
+
 import { motion } from 'framer-motion/dist/es/index';
 import { animationOne, transitionOne } from '../animation'
 
 
-const HomePage = (props) => {
+const HomePage = ({ currentlyReading }) => {
 
     return (
         <motion.main
@@ -18,13 +17,9 @@ const HomePage = (props) => {
             variants={animationOne}
             transition={transitionOne}
         >
-
-
             <Header />
-            <CurrentlyReading newBooks={props.newBooks} />
+            {<Shelf currentlyReading={currentlyReading} />}
 
-            {/* <WantToRead />
-            <Read /> */}
         </motion.main>
 
 

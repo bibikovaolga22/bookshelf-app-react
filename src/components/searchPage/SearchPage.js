@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion/dist/es/index';
 import './SearchPage.css';
-import BookList from '../booklist/BookList';
+
+import Book from '../book/Book'
 import SearchBox from '../searchBox/SearchBox'
-import { FaAngleLeft } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+
 import { animationOne, transitionOne } from '../animation'
 
-const SearchPage = (props) => {
+const SearchPage = ({ handleCurrentlyReading }) => {
 
     const [books, setBooks] = useState([]);
     const [searchValue, setSearchValue] = useState("");
-
-
-
 
     const getBooks = async () => {
         const url = `https://www.googleapis.com/books/v1/volumes?q=${searchValue}&key=AIzaSyChEqxgQ-Sj66hoqcpcH3_zqv5MgauGrDI&maxResults=40`;
@@ -28,17 +25,10 @@ const SearchPage = (props) => {
 
     }
 
-
     useEffect(() => {
         getBooks()
 
     }, [searchValue])
-
-
-
-
-
-
 
     return (
 
@@ -50,21 +40,16 @@ const SearchPage = (props) => {
             transition={transitionOne}
         >
 
-            <div className='search'>
-                <div className='icon-box'>
-                    <Link to="/" className='arrow-icon'>
-                        <FaAngleLeft className='icon' />
-                    </Link>
-                </div>
-                <div className='search-input-box'>
 
-                    <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-
-                </div>
-                <div className='book-list'></div>
-
+            <div className='search-container'>
+                <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
             </div>
-            <div className='books-menu'> <BookList books={books} handleCurrentlyReading={props.handleCurrentlyReading} /> </div>
+            <div className='book-list'>
+                <Book books={books} handleCurrentlyReading={handleCurrentlyReading} />
+            </div>
+
+
+            {/* <div className='books-menu'> <BookList books={books} handleCurrentlyReading={props.handleCurrentlyReading} /> </div> */}
 
         </motion.main>)
 

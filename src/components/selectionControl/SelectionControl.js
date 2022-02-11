@@ -3,7 +3,7 @@ import './SelectionControl.css'
 // import { BsCheck } from "react-icons/bs";
 
 
-const SelectionControl = (props) => {
+const SelectionControl = ({ setSelection }) => {
 
     // const [checked, setChecked] = useState(false)
 
@@ -15,14 +15,13 @@ const SelectionControl = (props) => {
 
     return (
         <div className='selection-menu'
-            onMouseLeave={() => props.func('')}
+            onMouseLeave={() => setSelection('')}
         >
 
             <p>move to...</p>
             <ul className='selection-menu-box'>
 
-
-                <li className='currentrly-reading-button'
+                <li className='currentrly-reading-button' 
                 > <span>Currently Reading</span>  </li>
                 <li className='want-to-read-button'><span>Want To Read</span></li>
                 <li className='read-button'><span>Read</span></li>

@@ -21,7 +21,7 @@ function App() {
     <AnimatePresence>
       <Routes >
         <Route path='searchPage' element={<SearchPage handleCurrentlyReading={handleCurrentlyReading} />} />
-        <Route path='/' element={<HomePage newBooks={currentlyReadingBooks} />} />
+        <Route path='/' element={<HomePage currentlyReading={currentlyReadingBooks} />} />
       </Routes>
 
     </AnimatePresence>

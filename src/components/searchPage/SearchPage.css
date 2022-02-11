@@ -1,3 +1,11 @@
+.book-list{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
 main{
     width: 100%;
     height: auto;
@@ -18,31 +26,41 @@ main li {
 
 .search {
     width: 100%;
-    height: 100px;
-       display: flex;
+    height: auto;
+    display: block;
    justify-content: center;
    margin-top: 10px;
     
   
 }
 
-.books-menu{
+.search-container{
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 150px;
+}
+
+/* .books-menu{
     width: 100%;
     height: auto;
     display: flex;
       justify-content: center;
       
-}
+} */
 
 
 
 
 @media  (max-width: 600px){
-
-    .books-menu{
+    .book-list{
+        width:100%;
+    }
+    /* .books-menu{
        
           margin-top: -10px;
-    }
+    } */
     
   }
 

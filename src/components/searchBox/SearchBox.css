@@ -1,22 +1,33 @@
 .search-input-box{
-    width: 85%;
+    width: 90%;
     background-color: #F54952;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    border-bottom-right-radius: 25px;
-    border-top-right-radius: 25px;
+    border-radius: 25px;
+    height: 100px;
 
+
+}
+.icon-container{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.input-cintainer{
+    width: 50%;
+    display: flex;
+  justify-content: center;
 }
 
 .search-input-box input{
-    width: 40%;
+    width: 90%;
     height: 50px;
     border-radius: 50px;
     border: none;
     text-indent: 5%;
     font-size: 150%;
-    margin-right: 6%;
     outline-width: 0;
 }
 .search-button{
@@ -30,7 +41,7 @@
     font-weight: 400;
     font-size: 200%;
 }
-.icon-box{
+.arrow-icon{
     font-size: 200%;
     width:10%;
      display: flex;
@@ -44,7 +55,7 @@
     cursor: pointer;
     color: #ffffff;
     width: 100%;
-        display: flex;
+     display: flex;
   
 }
 
@@ -73,8 +84,8 @@ margin-right: 7%;
         margin: 0%;
     }
     .search-input-box{
-                    width: 100%;
-                    justify-content: center;
+   width: 100%;
+     justify-content: center;
            
         
     }
