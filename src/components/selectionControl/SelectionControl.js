@@ -1,16 +1,9 @@
 import React from 'react';
 import './SelectionControl.css'
-// import { BsCheck } from "react-icons/bs";
+import SelectionItem from './SelectionItem'
 
+const SelectionControl = ({ setSelection, handleCurrentlyReading, handleWantToRead, handleRead, book, removeFromShelves }) => {
 
-const SelectionControl = ({ setSelection }) => {
-
-    // const [checked, setChecked] = useState(false)
-
-    // const handleOnClick = () => {
-    //     setChecked(!checked)
-    // }
-    // {checked && <BsCheck />} 
 
 
     return (
@@ -20,15 +13,14 @@ const SelectionControl = ({ setSelection }) => {
 
             <p>move to...</p>
             <ul className='selection-menu-box'>
+                <SelectionItem putOnShelf={handleCurrentlyReading} book={book} shelfDescription='Currently Reading' shelfName='currently-reading' />
+                <SelectionItem putOnShelf={handleWantToRead} book={book} shelfDescription='Want To Read' shelfName='want-to-read' />
+                <SelectionItem putOnShelf={handleRead} book={book} shelfDescription='Read' shelfName='read' />
+                <SelectionItem putOnShelf={removeFromShelves} book={book} shelfDescription='No Shelf' shelfName={undefined} />
 
-                <li className='currentrly-reading-button' 
-                > <span>Currently Reading</span>  </li>
-                <li className='want-to-read-button'><span>Want To Read</span></li>
-                <li className='read-button'><span>Read</span></li>
-                <li className='none-button'><span>None</span></li>
             </ul>
 
-        </div>
+        </div >
 
     );
 }

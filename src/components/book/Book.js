@@ -7,7 +7,7 @@ import { animationOne, transitionTwo } from '../animation'
 import SelectionControl from '../selectionControl/SelectionControl'
 
 
-const Book = ({ books, handleCurrentlyReading }) => {
+const Book = ({ books, handleCurrentlyReading, handleWantToRead, handleRead, removeFromShelves }) => {
     const img = (book) => {
         try {
             return (
@@ -15,7 +15,7 @@ const Book = ({ books, handleCurrentlyReading }) => {
 
             );
         } catch (error) {
-            console.log(error);
+            //console.log(error);
             return (
                 <img src={noimage} alt='NoImage'></img>
             );
@@ -41,12 +41,12 @@ const Book = ({ books, handleCurrentlyReading }) => {
     return (
 
 
-        <div className='book-list'  >
+        <div className='book-list-container'  >
 
             {books.map((book) => (
-                <motion.div className='book ' key={book.id}>
+                <motion.div className='book' key={book.id}>
                     <div className='image-container' onMouseLeave={() => setSelection('')}
-                        onClick={() => handleCurrentlyReading(book)}
+
                         initial='out'
                         animate='in'
                         exit='out'
@@ -55,13 +55,13 @@ const Book = ({ books, handleCurrentlyReading }) => {
                     >
                         {img(book)}
                         <div className='arrow-drop-down'
-                            onMouseEnter={() => setSelection(book.id)}
+                            onMouseEnter={() => { console.log(book.id); setSelection(book.id) }}
                         >
                             <FaAngleDown />
 
                         </div>
-                        {selection === book.id && <SelectionControl setSelection={setSelection} />}
-                        <h2>{handleTitle(book.volumeInfo.title)}</h2>
+                        {selection === book.id && <SelectionControl setSelection={setSelection} handleCurrentlyReading={handleCurrentlyReading} handleWantToRead={handleWantToRead} handleRead={handleRead} book={book} removeFromShelves={removeFromShelves} />}
+                        <h3>{handleTitle(book.volumeInfo.title)}</h3>
                         < p >{book.volumeInfo.authors && book.volumeInfo.authors[0]}</p>
 
 

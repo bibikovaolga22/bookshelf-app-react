@@ -1,19 +1,28 @@
-.shelf-container{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.shelf-container {
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: #f5f6f9;
 }
 
- 
-.current-books{
-    width: 100%;
+.shelf-box {
+  width: 100%;
+  min-height: 610px;
 }
 
-.currently-reading-box{
+.shelf-box h2 {
+  width: 100%;
+  font-size: 200%;
+  font-family: "League Spartan", sans-serif;
+  color: #394c82;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+  .shelf-box {
     width: 100%;
-    height: auto;
-   
+    min-height: 510px;
+  }
 }

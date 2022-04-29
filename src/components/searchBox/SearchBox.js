@@ -26,7 +26,7 @@ const SerachBox = (props) => {
                     <FaAngleLeft className='icon' />
                 </Link>
             </div>
-            <div className='input-cintainer'>
+            <div className='input-container'>
                 <input
                     className='form-control'
                     value={props.searchValue}

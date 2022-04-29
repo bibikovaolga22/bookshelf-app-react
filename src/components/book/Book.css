@@ -1,99 +1,112 @@
-.book-list {
-    width: 90%;
-    height: auto;
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: center;   
-     
-    }
-.book{
-    width: 9%;
-    height: 350px;
-    margin: 2%;
-    margin-top: 4%;
+.book-list-container {
+  width: 95%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-    
-    .image-container{
-        width: 100%;
-        height: 250px;
-        
-    
-    }
-    .image-container img {
-        height: 310px;
-        width: 100%;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        border-radius: 10px;
-    
-    }
-    .image-container h2{
-        font-size: 150%;
-        margin: 0;
-        line-height: 0.8;
-    
-    }
-    .image-container p{
-    font-size: 100%;
-    color: rgb(177, 177, 177);
-    margin: 0%;
-    font-family: 'Cairo', sans-serif;
-    line-height: 1.3;
-    }
-    
-    .arrow-drop-down{
-        width: 60px;
-        height: 60px;
-        background-color:#f54952e8;
-        border-radius: 11px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        margin-top: -70px;
-        margin-left: 148px;
-    }
-    .arrow-drop-down svg {
-        color: #ffffff;
-        font-size: 30px;
-    }
-     
-    @media  (max-width: 1380px) {
-        .image-container {
-          width: 15%;
-          height: 330px;
-        }
-    
-        .image-container img {
-            height: 260px;
-           
-        }
-    
-        .arrow-drop-down{
-            width: 50px;
-            height: 50px;
-            background: #f54952ad;
-            border-radius: 11px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            margin-top: -60px;
-            margin-left: 136px;
-        }
-       
-    
-      }
-    
-    
-      @media  (max-width: 600px){
-    
-       
-        .image-container{
-            width: 46%;
-                       margin: 1%;
-                margin-top: 9%;
-        }
-        .arrow-drop-down{
-            margin-left: 131px;
-        }
-      }
+.book {
+  width: 10%;
+  height: 350px;
+  margin: 2%;
+}
+
+.image-container {
+  width: 100%;
+  height: 250px;
+}
+.image-container img {
+  height: 330px;
+  width: 100%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+}
+.image-container h3 {
+  font-size: 150%;
+  margin: 0;
+  font-weight: 500;
+  line-height: 0.8;
+}
+.image-container p {
+  font-size: 100%;
+  color: rgb(177, 177, 177);
+  margin: 0%;
+  font-family: "Cairo", sans-serif;
+  line-height: 1.3;
+}
+
+.arrow-drop-down {
+  width: 60px;
+  height: 60px;
+  background-color: #394c82;
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin-top: -70px;
+  margin-left: 176px;
+}
+.arrow-drop-down svg {
+  color: #ffffff;
+  font-size: 30px;
+}
+
+@media (max-width: 600px) {
+  .book {
+    width: 45%;
+    margin: 1%;
+  }
+  .image-container {
+    width: 98%;
+  }
+  .book-list-container {
+    width: 100%;
+  }
+  .arrow-drop-down {
+    margin-left: 124px;
+    width: 42px;
+    height: 43px;
+    margin-top: -53px;
+  }
+}
+@media (max-width: 1024px) {
+  .book {
+    width: 20%;
+  }
+  .image-container {
+    width: 100%;
+  }
+
+  .book-list-container {
+    width: 100%;
+  }
+  .arrow-drop-down {
+    margin-left: 156px;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+  .image-container {
+    width: 100%;
+    height: 330px;
+  }
+
+  .image-container img {
+    height: 270px;
+  }
+
+  .arrow-drop-down {
+    width: 45px;
+    height: 45px;
+    margin-top: -55px;
+    margin-left: 136px;
+  }
+  .book {
+    width: 14%;
+  }
+  .arrow-drop-down svg {
+    color: #ffffff;
+    font-size: 25px;
+  }
+}

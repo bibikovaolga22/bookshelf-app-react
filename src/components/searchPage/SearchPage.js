@@ -7,7 +7,7 @@ import SearchBox from '../searchBox/SearchBox'
 
 import { animationOne, transitionOne } from '../animation'
 
-const SearchPage = ({ handleCurrentlyReading }) => {
+const SearchPage = ({ handleCurrentlyReading, handleWantToRead, handleRead, removeFromShelves, shelvedBooks }) => {
 
     const [books, setBooks] = useState([]);
     const [searchValue, setSearchValue] = useState("");
@@ -20,7 +20,22 @@ const SearchPage = ({ handleCurrentlyReading }) => {
         console.log(resJson.items);
 
         if (resJson.items) {
-            setBooks(resJson.items);
+            const books = resJson.items;
+            const newBooks = [];
+            const ids = {};
+            // API sometimes returns books with duplicate ids. Book ids need to be unique as they are used in motion.div as keys 
+            for (let i in books) {
+                if (books[i].id in shelvedBooks) {
+                    books[i] = shelvedBooks[books[i].id];
+                }
+                if (books[i].id in ids) {
+                    continue;
+                }
+                ids[books[i].id] = true;
+                newBooks.push(books[i]);
+
+            }
+            setBooks(newBooks);
         }
 
     }
@@ -45,11 +60,8 @@ const SearchPage = ({ handleCurrentlyReading }) => {
                 <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
             </div>
             <div className='book-list'>
-                <Book books={books} handleCurrentlyReading={handleCurrentlyReading} />
+                <Book books={books} handleCurrentlyReading={handleCurrentlyReading} handleWantToRead={handleWantToRead} handleRead={handleRead} removeFromShelves={removeFromShelves} />
             </div>
-
-
-            {/* <div className='books-menu'> <BookList books={books} handleCurrentlyReading={props.handleCurrentlyReading} /> </div> */}
 
         </motion.main>)
 

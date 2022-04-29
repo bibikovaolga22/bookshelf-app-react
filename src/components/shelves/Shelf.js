@@ -3,17 +3,15 @@ import React from 'react'
 
 import Book from '../book/Book';
 
-const Shelf = ({ currentlyReading }) => {
+const Shelf = ({ shelfBooks, headline, handleCurrentlyReading, handleWantToRead, handleRead, removeFromShelves }) => {
 
 
     return (
 
         <main className='shelf-container'>
-            <h2>Curretly Reading  </h2>
-            <div className='currently-reading-box'>
-                <div className='currently-reading-container'>
-                    <Book books={currentlyReading} />
-                </div>
+            <div className='shelf-box'>
+                <h2>{headline}</h2>
+                <Book books={shelfBooks} handleCurrentlyReading={handleCurrentlyReading} handleWantToRead={handleWantToRead} handleRead={handleRead} removeFromShelves={removeFromShelves} />
             </div>
         </main>
 
