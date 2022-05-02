@@ -1,7 +1,7 @@
 # Bookshelf App (React App)
 ## Udacity Capstone project 
 
-###Technologies used: React, Google Books API, Framer Motion, React Router
+### Technologies used: React, Google Books API, Framer Motion, React Router
 
 Bookshelf is a react app where users can find books and sort them between different shelves. 
 
